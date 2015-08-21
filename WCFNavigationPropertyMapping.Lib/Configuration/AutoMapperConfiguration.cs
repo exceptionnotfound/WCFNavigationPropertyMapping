@@ -9,17 +9,17 @@ using WCFNavigationPropertyMapping.Lib.EntityFrameworkModel;
 
 namespace WCFNavigationPropertyMapping.Lib.Configuration
 {
-    public static class AutoMapperConfiguration
+public static class AutoMapperConfiguration
+{
+    public static void Configure()
     {
-        public static void Configure()
-        {
-            AutoMapper.Mapper.AllowNullDestinationValues = false;
-            Mapper.CreateMap<EntityFrameworkModel.League, Contracts.DataContracts.League>();
-            Mapper.CreateMap<EntityFrameworkModel.Team, Contracts.DataContracts.Team>();
-            Mapper.CreateMap<EntityFrameworkModel.Player, Contracts.DataContracts.Player>();
-            Mapper.CreateMap<EntityFrameworkModel.League, Contracts.DataContracts.LeagueDTO>();
-            Mapper.CreateMap<EntityFrameworkModel.Team, Contracts.DataContracts.TeamDTO>();
-            Mapper.CreateMap<EntityFrameworkModel.Player, Contracts.DataContracts.PlayerDTO>();
-        }
+        AutoMapper.Mapper.AllowNullDestinationValues = false;
+        Mapper.CreateMap<EntityFrameworkModel.League, Contracts.DataContracts.League>();
+        Mapper.CreateMap<EntityFrameworkModel.Team, Contracts.DataContracts.Team>();
+        Mapper.CreateMap<EntityFrameworkModel.Player, Contracts.DataContracts.Player>();
+        Mapper.CreateMap<EntityFrameworkModel.League, Contracts.DataContracts.LeagueDTO>();
+        Mapper.CreateMap<EntityFrameworkModel.Team, Contracts.DataContracts.TeamDTO>();
+        Mapper.CreateMap<EntityFrameworkModel.Player, Contracts.DataContracts.PlayerDTO>();
     }
+}
 }

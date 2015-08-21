@@ -22,17 +22,7 @@ namespace WCFNavigationPropertyMapping.Lib.Managers
 
         public TeamDTO GetByID(int id, TeamOptions options)
         {
-            try
-            {
-                var team = _context.Teams.Where(x => x.Id == id).AddIncludeStatements(options).First();
-                var teamDTO = Mapper.Map<TeamDTO>(team);
-                return teamDTO;
-            }
-            catch(Exception ex)
-            {
-                var exception = ex.ToString();
-                return new TeamDTO();
-            }
+            return Mapper.Map<TeamDTO>(_context.Teams.Where(x => x.Id == id).AddIncludeStatements(options).First());
         }
     }
 }

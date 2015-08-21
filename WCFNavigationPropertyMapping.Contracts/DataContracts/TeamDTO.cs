@@ -11,9 +11,9 @@ namespace WCFNavigationPropertyMapping.Contracts.DataContracts
     public class TeamDTO : Team
     {
         [DataMember]
-        public League League { get; set; }
+        public LeagueDTO League { get; set; }
 
         [DataMember]
-        public List<Player> Players { get; set; }
+        public List<PlayerDTO> Players { get; set; }
     }
 }

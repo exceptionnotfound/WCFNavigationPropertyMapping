@@ -73,6 +73,30 @@
     <Compile Include="EntityFrameworkModel\Team.cs" />
     <Compile Include="Extensions\QueryExtensions.cs" />
     <Compile Include="Managers\TeamService.cs" />
+    <Compile Include="ModelFirst\League.cs">
+      <DependentUpon>LeaguesModelFirst.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelFirst\LeaguesModelFirst.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LeaguesModelFirst.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelFirst\LeaguesModelFirst.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LeaguesModelFirst.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelFirst\LeaguesModelFirst.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LeaguesModelFirst.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ModelFirst\Player.cs">
+      <DependentUpon>LeaguesModelFirst.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelFirst\Team.cs">
+      <DependentUpon>LeaguesModelFirst.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -82,6 +106,16 @@
     <Content Include="App_Data\Players_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Players.mdf</DependentUpon>
+    </Content>
+    <Content Include="ModelFirst\LeaguesModelFirst.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LeaguesModelFirst.edmx</DependentUpon>
+      <LastGenOutput>LeaguesModelFirst.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelFirst\LeaguesModelFirst.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LeaguesModelFirst.edmx</DependentUpon>
+      <LastGenOutput>LeaguesModelFirst.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
@@ -103,6 +137,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="ModelFirst\LeaguesModelFirst.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LeaguesModelFirst.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModelFirst\LeaguesModelFirst.edmx.diagram">
+      <DependentUpon>LeaguesModelFirst.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -110,6 +151,9 @@
       <Project>{b8bb8ae0-da82-4f70-8fc6-2eae0e86f1b4}</Project>
       <Name>WCFNavigationPropertyMapping.Contracts</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
