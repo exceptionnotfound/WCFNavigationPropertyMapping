@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,6 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\NavigationPropertyAttributes.cs" />
+    <Compile Include="DataContracts\League.cs" />
+    <Compile Include="DataContracts\LeagueDTO.cs" />
+    <Compile Include="DataContracts\Player.cs" />
+    <Compile Include="DataContracts\PlayerDTO.cs" />
+    <Compile Include="DataContracts\Team.cs" />
+    <Compile Include="DataContracts\TeamDTO.cs" />
+    <Compile Include="Options\OptionsBase.cs" />
+    <Compile Include="Options\TeamOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
